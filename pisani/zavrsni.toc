@@ -1,0 +1,8 @@
+\babel@toc {croatian}{}
+\contentsline {chapter}{\numberline {1}Uvod}{1}
+\contentsline {chapter}{\numberline {2}Opis problema}{2}
+\contentsline {chapter}{\numberline {3}Kori\IeC {\v s}teni razvojni alati i biblioteke}{3}
+\contentsline {chapter}{\numberline {4}Beskontaktna tehnologija ni\IeC {\v z}e frekvencije}{4}
+\contentsline {chapter}{\numberline {5}Arhitektura i dizajn sustava}{5}
+\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{6}
+\contentsline {chapter}{Literatura}{7}
