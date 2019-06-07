@@ -25,14 +25,72 @@
 U današnjem svijetu pokušavamo povezati sve više stvari, uređaja i pomagala s tehnologijom. Na taj način se pokušava olakšati korištenje i mogućnost automatizacije pomoću jednog centralnog mjesta. Takva rješenja nam omogućuju korištenje jednog uređaja za upotrebu u plaćanju, identifikaciji te mnogim drugim stvarima. Neki od centralnih mjesta su mobilni telefoni te beskontaktne kartice koje se nalaze u džepu većine današnjeg stanovništva.\par
 Kontrola ulaza je jedan od poslova koji se od antičkih civilizacija prepuštalo da obavlja čovjek. Vrata koja su koristila mehanizme ključa i brave nisu dopuštale odstupanje od te norme. Tek pojavom kartica s magnetskom trakom došlo je do promjena. Takve kartice dopuštale su da se svakoj osobi dodijeli jedinstveni identifikator. Pomoću čitaća kartica koje su sadržavale spremeljene identifikatore moglo se dopustiti ulaz samo određenim osobama i ujedno voditi evidencija pristupa. Jedna od mana ovakve tehnologije je što korisnik treba karticu dovesti u direktan kontakt s čitaćem te mogućnost jednostavnog repliciranja informacija spremljenih na njima.\par
 Tehnologije kao što su radio-frekvencijska identifikacija (\textbf{RFID}) ,nastala 1983. godine, te beskontaktna tehnologija niže frekvencije (\textbf{NFC}), nastala 2003. godine, dozvoljavaju udaljenu komunikaciju između čitaća i kartice ili oznake. U današnje vrijeme zamijenile su upotrebu kartica s magnetskom trakom zbog veće sigurnosti i u slučaju RFID-a mogućnosti za praćenjem položaja kartice ili oznake korištenjem komunikacije velikih frekvencija.\par
-Danas se najčešće za kontrolu ulaza koristi beskontaktna tehnologija niže frekvenicije zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim studentskim iskaznicama, što ne zahtjeva uvođenjem posebnih oznaka kao u slučaju radio-frekvencijske komunikacije.
+Danas se najčešće za kontrolu ulaza koristi beskontaktna tehnologija niže frekvenicije zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim akademskim iskaznicama, što ne zahtjeva uvođenjem posebnih oznaka kao u slučaju radio-frekvencijske komunikacije.
 
 \chapter{Opis problema}
+Sustav za kontrolu ulaza treba se sastojati od nekoliko dijelova:
+\begin{itemize}
+\item Softverskog dijela za autentifikaciju
+\item Hardverskog dijela za očitavanje NFC kartica
+\item NFC kartice 
+\item Mehaničke brave za otvaranje ulaza
+\end{itemize}
+Potrebno je pronaći adekvatni uređaj na kojem bi se izvršavala autentifikacija te uređaj za čitanje kartica. Oba uređaja trebaju biti kompaktni, laki za montiranje i neinvanzivni.
+\newline
+Proces kojim bi sustav trebao raditi je:
+\begin{itemize}
+\item Korisnik prilaže NFC karticu u bliski domet čitaća
+\item Čitać čita identifikacijsku informaciju s NFC kartice
+\item Čitać šalje informaciju uređaju za autentifikaciju
+\item Uređaj pomoću programa koji se izvodi na njemu radi autentifikaciju korisnika
+\item Program zapisuje evidenciju o čitanju
+\item Uređaj vraća čitaću informaciju ima li korisnik autorizaciju za otvaranje ulaza
+\item Čitać ovisno o odgovoru uređaja otvara mehaničku bravu ili signalizira korisniku da nema pristup
+\end{itemize}
 
-\chapter{Korišteni razvojni alati i biblioteke}
+\chapter{Korišteni razvojni alati }
+\section{GNU/Linux}	
 
+\section{Python 3 (3.6.7)}
+\section{Vim}
+\section{Git}
+\section{Raspberry Pi}
 \chapter{Beskontaktna tehnologija niže frekvencije (\textbf{NFC})}
-
+Beskontaktna tehnologija niže frekvencije, (eng. \textit{Near field communication}) ili skraćeno NFC je vrsta beskontaktne komunikacije između uređaja poput mobilnih telefona i beskontaktnih kartica. Beskontaktna komunikacija dozvoljava komunikaciju na male udaljenosti bez potrebe da uređaji dolaze u neposredni doticaj. \par
+NFC dozvoljava uređaju, koji služi kao čitać, tj. ispitivač, proizvodi aktivno radio frekvenciju što mu dozvoljava da komunicira s ostalim NFC kompatibilnim uređajima ili karticama. Pasivni uređaji poput beskontaktnih kartica i oznaka, imaju spremljenu informaciju te tu informaciju razmjenjuju s čitaćima, ali ne dozvoljavaju čitanje informacija drugih uređaja. Kod komunikacije dva aktivna uređaja postoji obostrana komunikacija slanja i primanja informacija.\par 
+Integracija beskontaktnih tehnologija u kreditne, putničke i kuponske kartice dozvoljava korisnicima da obavljaju plaćanja, ukrcavanje na javni prijevoz i razmjenu informacija preko jednostavnog  približavanja kartica. Također postoji mogućnost integracije više usluga preko mobilnih telefona te tako eliminirati korištenje različitih kartica za različite usluge.\par 
+U današnje vrijeme sve više poduzeća implementira beskontaktne tehnologije u svoje usluge, uključujući implementacije virtualnih kartica koje dozvoljavaju plaćanjem na kartičnim terminalima pomoću mobilnih telefona.
+\section{Povijest}
+Beskontaktna tehnologija niže frekvencije postoji na temeljima radio-frekvencijske identifikacije (RFID). NFC je podset RFID-a s kraćim dometom zbog sigurnosnih razloga.\par 
+2004. godine Nokia, Sony i Philips zajedno su formirali NFC Forum. Njihov zjednički cilj je bio promoviranje sigurnosti, jednostavnosti korištenja i popularnosti beskontaktne tehnologije niže frekvencije. Zaduženje Foruma je održavanje standarda koji dozvoljava da tehnologija može funkcionirati između sva uređaja. Ako netko želi proizvesti NFC uređaj potrebno je sljediti standarde postavljene od strane NFC Foruma. To osigurava da korisnik sa bilo kojim NFC uređajem može komunicirati s nekim drugim NFC uređajem.\par
+Iako je NFC Forum formiran 2004. godine, prve specifikacije za NFC oznake su se pojavile 2006. godine. NFC oznake su mali objekti koji sadrže informacije koje NFC čitaći mogu pročitati. Informacije na oznakama se u većini slučajeva mogu samo čitati, ali postoje i oznake u koje se mogu upisati nove ili promijeniti stare informacije.\par 
+Prvi mobilni telefon koji je sadržavao NFC sposobnosti je bila Nokia 6131 NFC predstavljena 2006. godine. Sazrijevanjem tehnologije dolazile su i nove specifikacije koje su osim podržavanja plaćanja dozvoljavale i razmjenu slika, videa i ostalih informacija. Danas je NFC tehnologija dostupna na većini mobilnih uređaja, od telefona, pametnih satova do integracije u automobile.
+\section{Tehnološki standard}
+Kada se razvijaju NFC uređaji potrebno je pratiti NFC standarde. Standardi postoje da sve vrste NFC uređaja mogu međusobno komunicirati kako oni dizajnirani u prošlosti tako i u budućnosti. Postoje dvije vrste glavnih specifikacija za NFC tehnologiju:
+\begin{itemize}
+\item ISO/IEC 14443 koja definira identifikacijske kartice koje spremaju informacije, poput NFC oznaka
+\item ISO/IEC 18000-3 koja definira radio-frekvencijsku identifikacijsku komunikacijsko NFC uređaja
+\end{itemize}\par 
+ISO/IEC 18000-3 je internacionalni standard za sve uređaje koji komuniciraju bežično na frekvenciji 13.56MHz. Uređaji trebaju biti na minimalnoj udaljenosti od 4cm prije nego dolazi razmjene informacija. Ovi standardi opisuju način na koji čitać i NFC oznaka s koje se čita trebaju komunicirati međusobno.\par
+Čitać šalje signal oznaki. Ako su uređaji dovoljno blizu jedan drugom oznaka postaje napajana preko signala čitaća. To dozvoljava da oznaka bude malena i bez potrebe da sadrži bateriju ili svoj vlastiti izvor napajanja.\par
+Ta dva uređaja kreiraju visoko frekvencijsko magnetsko polje između zavojnica uređaja. Jednom kada je polje uspostavljeno, dolazi do konekcije i  
+razmjene informacija između čitaća i oznake. Čitać šalje prvu poruku oznaci kako bi doznao vrstu komunikacije koju oznaka koristi, tip A ili tip B. Kada oznaka odgovori čitać šalje prvu naredbu koja mora odgovarati specifikaciji.\par 
+Oznaka nakon primitka naredbe provjerava je li ona ispravna. Ako nije, oznaka ne odgovara. U protivnom odgovara s zahtjevanom informacijom. Kod  nekih komunikacija poput kartićnih plaćanja dolazi do uspostave sigurnog komunikacijskog kanala i sve informacije poslane su enkriptirane.\par 
+NFC oznake rade na principu da u jednom trenutku mogu samo primati ili slati informacije, dok čitaći mogu primati informacije i slati naredbe istovremeno. Naredbe se šalju s čitaća preko mofulacijskog faznog podrhtavanja (eng. \textit{phase jitter modulation}) (PJM) kako bi modificirao okružujuće polje i poslao signal. Oznaka odgovara koristeći induktivnost kako bi poslala naboj preko svojih zavojnica.\par 
+Prateći ove specifikacije osiguravamo da svi NFC uređaji mogu međusobno komunicirati.
+\section{Sigurnosni problemi}
+Korisnici NFC tehnologije se naravno pitaju koji su sigurnosni rizici pogotovo oni koji ju koriste za kartična plaćanja. Jesu li njihove informacije sigurne i otporne na krađu? U nastavku su neki od sigurnosnih problema koji se mogu pojaviti i kako NFC tehnologija ih sprječava.
+\subsection{Prisluškivanje}
+Prisluškivanje se dešava kada osoba prati komunikaciju između čitaća i oznaka. Nije potrebno pratiti svaki signal da bi se prikupila privatna informacija. Postoje dvije metode kako spriječiti prisluškivanje:
+\begin{itemize}
+\item udaljenost na kojoj NFC radi. Kako NFC radi na maloj udaljenosti prisluškivanje se može desiti na jako malom području.
+\item Sigurni kanali. Kada je uspostavljen sigurni kanal, sve informacije koje se razmjenjuju su enkriptirane i samo ovlašćeni uređaji ih mogu dekriptirati. Potrebno je samo provjeriti koriste li čitaći sigurne kanale.
+\end{itemize}
+\subsection{Korupcija i manipulacija podataka}
+Korupcija i manipulacija se dešavaju kada osoba manipulira informacijama koje se šalju čitaću ili posreduje informacijama tako da budu iskvarene i beskorisne kada dođu do čitaća. Kako bi se spriječila korupcija i manipulacija koriste se sigurni kanali. Neki uređaji mogu prepoznati takve napade i spriječiti ih prije nego što se dogode.
+\subsection{Presretanje}
+Presretanje je slično manipulaciji podataka. Kod presretanja postoji posrednik koji čita, mijenja sve informacije koje se razmjenjuju između čitaća i oznake. Ovakva vrsta napada je složena za izvesti i rijeđe se dešava. Kako bi se spriječio jedan uređaj mora djelovati aktivno, a drugi pasivno. To znači da jedan šalje, a drugi prima informacije umjesto da oba šalju i primaju informacije.
+\subsection{Krađa}
 \chapter{Arhitektura i dizajn sustava}
 
 \chapter{Zaključak}
