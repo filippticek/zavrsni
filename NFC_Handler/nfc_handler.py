@@ -1,21 +1,35 @@
 #!/usr/bin/env python3
 from http.server import HTTPServer, BaseHTTPRequestHandler
+from tinydb import TinyDB, Query
+from datetime import datetime
 import socket
-import json
-import request
 
 HOST_NAME = '192.168.7.191'
 PORT_NUMBER = 80
 
-SUPERVISOR_ADDRESS = "http://localhost:8080/nfc"
 
 class Server(BaseHTTPRequestHandler):
 	def do_GET(self):
-		self.send_response(200)
-		self.send_header('Content-type','text/html')
-		self.end_headers()
-		self.wfile.write("<ORBIT>\nUI=a00000\n\n</ORBIT>".encode("utf-8"))
-		handle_nfc(self.path)
+		command = handle_nfc(self.path)
+
+		if command is 'Open':
+			self.send_response(200)
+			self.send_header('Content-type','text/html')
+			self.end_headers()
+			self.wfile.write("<ORBIT>\nGRNT=05\nUI=820432\n\n</ORBIT>".encode("utf-8"))
+
+		elif command is 'Close':
+			self.send_response(200)
+			self.send_header('Content-type','text/html')
+			self.end_headers()
+			self.wfile.write("<ORBIT>\nDENY=05\nUI=A00332\n\n</ORBIT>".encode("utf-8"))
+
+		elif command is 'PING':
+			self.send_response(200)
+			self.send_header('Content-type','text/html')
+			self.end_headers()
+			self.wfile.write("<ORBIT>RLY=1\nUI=000000\n\n</ORBIT>".encode("utf-8"))
+
 		return
 
 def handle_nfc(url):
@@ -23,11 +37,15 @@ def handle_nfc(url):
 	print ('Uid_len:', uid_len)
 	print ('Uid:', uid)
 	if uid_len is not False:
-		send_response(uid_len, uid)
-
-def send_response(uid_len, uid):
-	response = json.dumps({'reader': 'NFC', 'id': uid})
-	requests.post(SUPERVISOR_ADDRESS, data=response)
+		Uid = Query()
+		if db.search(Uid.uid == uid):
+			print ("%s Door opening. UID: %s" % (str(datetime.now()), uid))
+			return 'Open'
+		else:
+			print("%s Unauthorized access. UID: %s" % (str(datetime.now()), uid))
+			return 'Close'
+	else:
+		return 'PING'
 
 def get_uid(url):
 	if "ulen" in url:
@@ -39,7 +57,8 @@ def get_uid(url):
 		return (False, False)
 try:
 	server = HTTPServer((HOST_NAME, PORT_NUMBER), Server)
-	print ('Started httpserver on port ' , PORT_NUMBER)
+	print ("%s Started httpserver on port %d" % (str(datetime.now()), PORT_NUMBER))
+	db = TinyDB('db.json')
 
 	server.serve_forever()
 
