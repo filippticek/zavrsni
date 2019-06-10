@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from tinydb import TinyDB, Query
 from datetime import datetime

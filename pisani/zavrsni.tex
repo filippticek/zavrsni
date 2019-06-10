@@ -1,6 +1,45 @@
 \documentclass[times, utf8, zavrsni]{fer}
 \usepackage{booktabs}
+\usepackage{dirtree}
+\usepackage{listings}
+\usepackage{xcolor}
+
 \graphicspath{ {./images/} }
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
 
 
 \begin{document}
@@ -219,6 +258,10 @@ Korupcija i manipulacija se dešavaju kada osoba manipulira informacijama koje s
 Presretanje je slično manipulaciji podataka. Kod presretanja postoji posrednik koji čita, mijenja sve informacije koje se razmjenjuju između čitača i oznake. Ovakva vrsta napada je složena za izvesti i rjeđe se dešava. Kako bi se spriječio jedan uređaj mora djelovati aktivno, a drugi pasivno. To znači da jedan šalje, a drugi prima informacije umjesto da oba šalju i primaju informacije.
 \subsection{Krađa}
 Ako dođe do krađe mobilnog telefona ili kartice kradljivac može lako oponašati osobu te tako dobiti pristup plaćanjima i ulazima. Zato je potrebno upotrijebiti dodatne mjere sigurnosti kao postavljanje sigurnosnih lozinka na svoje mobilne uređaje ili u slučaju kartica i oznaka prijaviti krađu svim administratorima sustava kod kojih je ta kartica ili oznaka zabilježena.
+
+\section{Jedinstveni identifikacijski broj (UID)}
+
+
 \chapter{Arhitektura i dizajn sustava}
 U ovome poglavlju objašnjena je cijela struktura sustava za kontrolu ulaza korištenjem beskontaktnih kartica. Sustav se sastoji od:
 \begin{itemize}
@@ -226,8 +269,119 @@ U ovome poglavlju objašnjena je cijela struktura sustava za kontrolu ulaza kori
 \item Orbit IP čitača
 \end{itemize}
 
-Sustav je zamišljen kao jednostavan 
+Sustav je zamišljen kao jednostavan sustav za kontrolu ulaza koji omogućuje autentifikaciju preko beskontaktnih kartica koje sadrže NFC tehnologiju. Naravno postoji mogućnost autentifikacije i mobilnim telefonima koji podržavaju NFC. \par 
+
+\section{Struktura programske podrške}
+Programska podrška se sastoji od skripte za pokretanje aplikacije za kontrolu ulaza, aplikacije za kontrolu ulaza, aplikacije za unošenje identifikatora u bazu podataka i baze podataka.
+\begin{figure}[h]
+\dirtree{%
+ .1 NFC\_Handler.
+ .2 database\_input.py.
+ .2 db.json.
+ .2 nfc\_handler.py.
+ .2 startup.sh. 
+}
+\caption{Struktura programske podrške}
+\end{figure}
+
+\section{Baza podataka}
+Baza podataka je jednostavna datotečna baza u JSON formatu. Nalazi se u datoteci \textbf{db.json}.	\par
+JSON je tekstualni format koji je jezično neovisan, ali koristi konvencije koje su poznate većini programera.\par
+JSON podaci se spremaju u obliku \{'ime' : 'vrijedost'\} koje predstavljaju jedan objekt. Objekti su međusobno odijeljeni zarezima.\par 
+Kod baze podataka ovog rada postoji glavni objekt \textbf{\_default} koji predstavlja korijen te sadrži objekte nizane   sljednim brojevima. Svaki broj sadrži objekt imena \textbf{uid} (eng. \textit{Unique ID}) i vrijednost koja predstavlja identifikacijski broj NFC oznake. Identifikacijski broj oznake sadrži vrijednosti zapisane u \textbf{heksadecimalnom} formatu, a veličina identifikatora ovisi o proizvođaču, ali je najčešće veličine 7 bajta.
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{"_default": {
+  "1": {"uid": "AEF056"}, 
+  "2": {"uid": "123456"},
+  "3": {"uid": "555555"},
+  "4": {"uid": "31053B71"},
+  "5": {"uid": "123456"}
+}}
+
+\end{lstlisting}
+\captionof{lstlisting}{Primjer izgleda datoteke db.json}
+
 \section{Autentifikacija}
+Autentifikacija korisnika se provodi preko aplikacije \textbf{nfc\_handler.py}.\par
+Tijek izvršavanja programa je sljedeći:
+\begin{itemize}
+\item Kreiranje HTTP servera
+\item Učitavanje baze podataka
+\item Čekanje na zahtjev čitača
+\item Korisnik prilaže NFC karticu
+\item Čitač pošalje zahtjev
+\item Aplikacija parsira dobiven zahtjev
+\item Aplikacija provjerava u bazi podataka 
+   \begin{itemize}
+   \item Postoji UID, vrati čitaču da otvori vrata
+   \item Ne postoji UID, vrati čitaču da ne otvara vrata
+   \item Nema UID u poslanom zahtjevu, pošalji prazan odgovor
+   \end{itemize}
+\item Vrati se na čekanje zahtjeva
+\end{itemize}
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{sequence.png}
+\centering
+\caption{Sekvencijski dijagram sustava}
+\centering
+\end{figure}
+
+\subsection{Inicijalizacija aplikacije}
+Aplikacija se incijalizira uključivanjem iz biblioteka:
+\begin{itemize}
+\item \textbf{http.server} klase:
+	\begin{itemize}
+	\item HTTPServer
+	\item BaseHTTPRequestHandler
+	\end{itemize}
+\item \textbf{tinydb} klase
+	\begin{itemize}
+	\item TinyDB
+	\item Query
+	\end{itemize}
+\item \textbf{datetime}, klasu datetime
+\item \textbf{socket}
+\end{itemize}
+
+Postavlja \textbf{HOST\_NAME} i \textbf{PORT\_NUMBER}. Te varijable su postavljene na IP adresu '192.168.7.191' i vrata 80  jer čitač zadano šalje svoje zahtjeve na tu adresu i vrata.\par
+Dolazi do inicijalizacije web poslužitelja i dohvaćanje baze podataka. Nakon toga aplikacija čeka na zahtjeve od čitača.
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{init.png}
+\centering
+\caption{Inicijalizacija aplikacije}
+\centering
+\end{figure}
+
+\subsection{Parsiranje zahtjeva}
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{parsiranje.png}
+\centering
+\caption{Sekvencijski dijagram sustava}
+\centering
+\end{figure}
+
+\subsection{Provjera baze podataka}
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{baza.png}
+\centering
+\caption{Sekvencijski dijagram sustava}
+\centering
+\end{figure}
+
+\subsection{Obrada zahtjeva	}
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{server.png}
+\centering
+\caption{Sekvencijski dijagram sustava}
+\centering
+\end{figure}
+
 \section{Implementacija}
 
 \begin{figure}[h]
