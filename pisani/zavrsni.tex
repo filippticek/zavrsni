@@ -130,7 +130,7 @@ Razlog odabira ovog računala je njegova mala veličina, jednostavnost korišten
 \end{figure}
 
 \section{Gemini 2000 Orbit IP}
-Gemini 2000 Orbit IP je beskontaktni čitač niže frekvencije. Čitać je napajan preko Etherneta (eng. \textit{Power over Ethernet}) (PoE) standard IEEE 802.3af-2003 te se može koristiti PoE mrežni preklopnik ili aktivni 48V ubrizgač. Čitač također koristi Ethernet priključak za komunikaciju s web poslužiteljem. \par
+Gemini 2000 Orbit IP je beskontaktni čitač niže frekvencije. Čitač je napajan preko Etherneta (eng. \textit{Power over Ethernet}) (PoE) standard IEEE 802.3af-2003 te se može koristiti PoE mrežni preklopnik ili aktivni 48V ubrizgač. Čitač također koristi Ethernet priključak za komunikaciju s web poslužiteljem. \par
 Orbit IP radi kao samostalan web klijent te komunicira s web poslužiteljem tako da šalje HTTP zahtjeve i tada čeka povrati odgovor također u obliku HTTP zahtjeva. \par 
 Čitač podržava ISO 14443 Tip A i B oznake.\par 
 Čitač je odabran za ovaj rad zbog jednostavnog razvoja, jer se koristi jednostavna HTTP komunikacija s jednostavnim naredbama, te mogućnosti da se rade složeniji sustavi s više čitača jer se spaja u mrežu.\par
@@ -149,11 +149,11 @@ Python je interpretativni programski jezik nastao od strane Guido van Rossuma 19
 
 \begin{itemize}
 \item Skriptiranje - kao interpretativni jezik koristi se za podešavanje sustava te pisanje jednostavnih skripti za različite namjene
-\item Matematika - zbog velikog izbora matematičkih bibilioteka Python je jezik koji se često koristi za statistiku i strojno učenje
-\item Razvoj web aplkacija - poslužiteljski dio aplikacija sve više je razvijan u Pythonu. Interpretativni način rada iako nije najbrži dozvoljava brži razvoj i testiranje aplikacija. Također zbog mnogo razvojnih okvira koji nude brzi razvoj i proširivost
+\item Matematika - zbog velikog izbora matematičkih biblioteka Python je jezik koji se često koristi za statistiku i strojno učenje
+\item Razvoj web aplikacija - poslužiteljski dio aplikacija sve više je razvijan u Pythonu. Interpretativni način rada iako nije najbrži dozvoljava brži razvoj i testiranje aplikacija. Također zbog mnogo razvojnih okvira koji nude brzi razvoj i proširivost
 \end{itemize} 
 
-Za razvoj ovog rada odabran je Python zbog svoje rasprostranjenosti, količine bibilioteka i neovisnosti o sustavu na kojem se izvršava. Python također karakterizira i čitljivost koda te kao takav je savršen za razvoj manjih projekata.
+Za razvoj ovog rada odabran je Python zbog svoje rasprostranjenosti, količine biblioteka i neovisnosti o sustavu na kojem se izvršava. Python također karakterizira i čitljivost koda te kao takav je savršen za razvoj manjih projekata.
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{python.png}
@@ -190,7 +190,7 @@ Vim je tekstualni editor koji zbog svoje velike mogućnosti proširenja i efikas
 \end{figure}
 
 \section{Git}
-Git je besplatan distiribuirani sustav za upravljanje izvornim kodom nastao 2005. godine od strane Linus Torvalds. Git kao alat služi da bi se efikasno i lako pratile promjene nastale u razvoju programskog kod.\par
+Git je besplatan distribuirani sustav za upravljanje izvornim kodom nastao 2005. godine od strane Linus Torvalds. Git kao alat služi da bi se efikasno i lako pratile promjene nastale u razvoju programskog kod.\par
 U ovom projektu git-ova glavna svrha je bila spremanje promjena te mogućnost lakog dohvaćanja istog na drugom računalu više nego kao sustav za kontrolu verzijama. Upravitelj repozitorija korišten je GitHub.
 
 \begin{figure}[h]
@@ -204,7 +204,7 @@ U ovom projektu git-ova glavna svrha je bila spremanje promjena te mogućnost la
 Beskontaktna tehnologija niže frekvencije, (eng. \textit{Near field communication}) ili skraćeno NFC je vrsta beskontaktne komunikacije između uređaja poput mobilnih telefona i beskontaktnih kartica. Beskontaktna komunikacija dozvoljava komunikaciju na male udaljenosti bez potrebe da uređaji dolaze u neposredni doticaj. \par
 NFC dozvoljava uređaju, koji služi kao čitač, tj. ispitivač, proizvodi aktivno radio frekvenciju što mu dozvoljava da komunicira s ostalim NFC kompatibilnim uređajima ili karticama. Pasivni uređaji poput beskontaktnih kartica i oznaka, imaju spremljenu informaciju te tu informaciju razmjenjuju s čitačima, ali ne dozvoljavaju čitanje informacija drugih uređaja. Kod komunikacije dva aktivna uređaja postoji obostrana komunikacija slanja i primanja informacija.\par 
 Integracija beskontaktnih tehnologija u kreditne, putničke i kuponske kartice dozvoljava korisnicima da obavljaju plaćanja, ukrcavanje na javni prijevoz i razmjenu informacija preko jednostavnog  približavanja kartica. Također postoji mogućnost integracije više usluga preko mobilnih telefona te tako eliminirati korištenje različitih kartica za različite usluge.\par 
-U današnje vrijeme sve više poduzeća implementira beskontaktne tehnologije u svoje usluge, uključujući implementacije virtualnih kartica koje dozvoljavaju plaćanjem na kartičnim terminalima pomoću mobilnih telefona.
+U današnje vrijeme sve više poduzeća implementira beskontaktne tehnologije u svoje usluge, uključujući implementacije virtualnih kartica koje dozvoljavaju plaćanjem na kartičnim terminalima pomoću mobilnih telefona.\citep{downes2002shortams}{anfc}
 
 \begin{figure}[h]
 \includegraphics[scale=0.4]{nfcuse.jpeg}
@@ -236,7 +236,7 @@ ISO/IEC 18000-3 je internacionalni standard za sve uređaje koji komuniciraju be
 Čitač šalje signal oznaci. Ako su uređaji dovoljno blizu jedan drugom oznaka postaje napajana preko signala čitača. To dozvoljava da oznaka bude malena i bez potrebe da sadrži bateriju ili svoj vlastiti izvor napajanja.\par
 Ta dva uređaja kreiraju visoko frekvencijsko magnetsko polje između zavojnica uređaja. Jednom kada je polje uspostavljeno, dolazi do konekcije i razmjene informacija između čitača i oznake. Čitač šalje prvu poruku oznaci kako bi doznao vrstu komunikacije koju oznaka koristi, tip A ili tip B. Kada oznaka odgovori čitač šalje prvu naredbu koja mora odgovarati specifikaciji.\par 
 Oznaka nakon primitka naredbe provjerava je li ona ispravna. Ako nije, oznaka ne odgovara. U protivnom odgovara s zahtijevanom informacijom. Kod  nekih komunikacija poput kartičnih plaćanja dolazi do uspostave sigurnog komunikacijskog kanala i sve informacije poslane su enkriptirane.\par 
-NFC oznake rade na principu da u jednom trenutku mogu samo primati ili slati informacije, dok čitači mogu primati informacije i slati naredbe istovremeno. Naredbe se šalju s čitaća preko modulacijskog faznog podrhtavanja (eng. \textit{phase jitter modulation}) (PJM) kako bi modificirao okružujuće polje i poslao signal. Oznaka odgovara koristeći induktivnost kako bi poslala naboj preko svojih zavojnica.\par 
+NFC oznake rade na principu da u jednom trenutku mogu samo primati ili slati informacije, dok čitači mogu primati informacije i slati naredbe istovremeno. Naredbe se šalju s čitača preko modulacijskog faznog podrhtavanja (eng. \textit{phase jitter modulation}) (PJM) kako bi modificirao okružujuće polje i poslao signal. Oznaka odgovara koristeći induktivnost kako bi poslala naboj preko svojih zavojnica.\par 
 Prateći ove specifikacije osiguravamo da svi NFC uređaji mogu međusobno komunicirati.
 
 \begin{figure}[h]
@@ -255,14 +255,15 @@ Prisluškivanje se dešava kada osoba prati komunikaciju između čitača i ozna
 \item Sigurni kanali. Kada je uspostavljen sigurni kanal, sve informacije koje se razmjenjuju su enkriptirane i samo ovlašteni uređaji ih mogu dekriptirati. Potrebno je samo provjeriti koriste li čitaći sigurne kanale.
 \end{itemize}
 \subsection{Korupcija i manipulacija podataka}
-Korupcija i manipulacija se dešavaju kada osoba manipulira informacijama koje se šalju čitaću ili posreduje informacijama tako da budu iskvarene i beskorisne kada dođu do čitača. Kako bi se spriječila korupcija i manipulacija koriste se sigurni kanali. Neki uređaji mogu prepoznati takve napade i spriječiti ih prije nego što se dogode.
+Korupcija i manipulacija se dešavaju kada osoba manipulira informacijama koje se šalju čitaču ili posreduje informacijama tako da budu iskvarene i beskorisne kada dođu do čitača. Kako bi se spriječila korupcija i manipulacija koriste se sigurni kanali. Neki uređaji mogu prepoznati takve napade i spriječiti ih prije nego što se dogode.
 \subsection{Presretanje}
 Presretanje je slično manipulaciji podataka. Kod presretanja postoji posrednik koji čita, mijenja sve informacije koje se razmjenjuju između čitača i oznake. Ovakva vrsta napada je složena za izvesti i rjeđe se dešava. Kako bi se spriječio jedan uređaj mora djelovati aktivno, a drugi pasivno. To znači da jedan šalje, a drugi prima informacije umjesto da oba šalju i primaju informacije.
 \subsection{Krađa}
 Ako dođe do krađe mobilnog telefona ili kartice kradljivac može lako oponašati osobu te tako dobiti pristup plaćanjima i ulazima. Zato je potrebno upotrijebiti dodatne mjere sigurnosti kao postavljanje sigurnosnih lozinka na svoje mobilne uređaje ili u slučaju kartica i oznaka prijaviti krađu svim administratorima sustava kod kojih je ta kartica ili oznaka zabilježena.
 
 \section{Jedinstveni identifikacijski broj (UID)}
-
+Svaka NFC oznaka ima svoj globalno jedinstven, dobiven od strane proizvođača identifikacijski broj koji se može samo čitati (eng. \textit{Unique identifier}) (UID). U većini slučajeva UID je 7 bajta duljine i prikazuje se u heksadekadskom obliku.. UID nije moguće mijenjati ili brisati. Spremljen je u posebnom dijelu memorije NFC oznake koja ne dozvoljava da se bitovi mijenjaju. \par 
+UID nije potpuno slučajan. Prvi bajt predstavlja proizvođača oznake, a ostatak je dodijeljen ovisno o proizvođaču. 
 
 \chapter{Arhitektura i dizajn sustava}
 U ovome poglavlju objašnjena je cijela struktura sustava za kontrolu ulaza korištenjem beskontaktnih kartica. Sustav se sastoji od:
@@ -290,7 +291,7 @@ Programska podrška se sastoji od skripte za pokretanje aplikacije za kontrolu u
 Baza podataka je jednostavna datotečna baza u JSON formatu. Nalazi se u datoteci \textbf{db.json}.	\par
 JSON je tekstualni format koji je jezično neovisan, ali koristi konvencije koje su poznate većini programera.\par
 JSON podaci se spremaju u obliku \{'ime' : 'vrijedost'\} koje predstavljaju jedan objekt. Objekti su međusobno odijeljeni zarezima.\par 
-Kod baze podataka ovog rada postoji glavni objekt \textbf{\_default} koji predstavlja korijen te sadrži objekte nizane   sljednim brojevima. Svaki broj sadrži objekt imena \textbf{uid} (eng. \textit{Unique ID}) i vrijednost koja predstavlja identifikacijski broj NFC oznake. Identifikacijski broj oznake sadrži vrijednosti zapisane u \textbf{heksadecimalnom} formatu, a veličina identifikatora ovisi o proizvođaču, ali je najčešće veličine 7 bajta.
+Kod baze podataka ovog rada postoji glavni objekt \textbf{\_default} koji predstavlja korijen te sadrži objekte nizane slijednim brojevima. Svaki broj sadrži objekt imena \textbf{uid} (eng. \textit{Unique ID}) i vrijednost koja predstavlja identifikacijski broj NFC oznake. Identifikacijski broj oznake sadrži vrijednosti zapisane u \textbf{heksadecimalnom} formatu, a veličina identifikatora ovisi o proizvođaču, ali je najčešće veličine 7 bajta.
 
 \begin{lstlisting}[language=json,firstnumber=1]
 {"_default": {
@@ -300,9 +301,9 @@ Kod baze podataka ovog rada postoji glavni objekt \textbf{\_default} koji predst
   "4": {"uid": "31053B71"},
   "5": {"uid": "123456"}
 }}
-
 \end{lstlisting}
 \captionof{lstlisting}{Primjer izgleda datoteke db.json}
+\setlength{\parindent}{4ex}
 
 \section{Autentifikacija}
 Autentifikacija korisnika se provodi preko aplikacije \textbf{nfc\_handler.py}.\par
@@ -331,7 +332,7 @@ Tijek izvršavanja programa je sljedeći:
 \end{figure}
 
 \subsection{Inicijalizacija aplikacije}
-Aplikacija se incijalizira uključivanjem iz biblioteka:
+Aplikacija se inicijalizira uključivanjem iz biblioteka:
 \begin{itemize}
 \item \textbf{http.server} klase:
 	\begin{itemize}
@@ -358,7 +359,7 @@ Dolazi do inicijalizacije web poslužitelja i dohvaćanje baze podataka. Nakon t
 \end{figure}
 
 \subsection{Parsiranje zahtjeva}
-Kada aplikacija dobije zahtjev od čitača, čitač sve informacije šalje putem URL-a. Zato je potrebno parsirati URL i pronači UID. Za to služi funkcija \textbf{handle\_nfc}.\par
+Kada aplikacija dobije zahtjev od čitača, čitač sve informacije šalje putem URL-a. Zato je potrebno parsirati URL i pronaći UID. Za to služi funkcija \textbf{handle\_nfc}.\par
 UID se pronalazi prvo traženjem njegove duljine u bajtima, a zatim se traži identifikacijski broj.\par 
 Funkcija vraća ili duljinu UID-a i UID ili vrijednosti False, False ovisno o uspješnosti pronalaska istih u zahtjevu.
 
@@ -420,8 +421,8 @@ Nakon slanja odgovora aplikacija se vraća u stanje čekanja zahtjeva.
 \newpage
 
 \section{Implementacija}
-Čitač i uređaj na kojoj se pokreće poslužiteljska aplikacija, Raspberry Pi Model 2 B, komuniciraju putem Ethernet priključka.\par 
-Čitač je također i napajan preko Ethernet priključka te je za njegov rad potreban PoE mrežni preklopnik ili PoE ubrizgivač. Kod implementacije rada koristio se Mikrotik Gigabit PoE ubrizgivač u koji se dovodi upredena parica i 48V istosmjerni pretvornik. 
+Čitač i uređaj na kojoj se pokreće poslužiteljska aplikacija, Raspberry Pi Model 2 B, komuniciraju putem Ethernet priključka. \par 
+Čitač je i napajan preko Ethernet priključka te je za njegov rad potreban PoE mrežni preklopnik ili PoE ubrizgivač. Kod implementacije rada koristio se Mikrotik Gigabit PoE ubrizgivač u koji se dovodi upredena parica i 48V istosmjerni pretvornik. 
 
 \begin{figure}[h]
 \includegraphics[scale=0.3]{poe.jpg}
@@ -458,23 +459,29 @@ Zadnja dio sustava je elektronička brava koja otvara bravu kada dobije napon od
 
 
 \chapter{Zaključak}
-Zaključak.
+Korištenje novih tehnologija sve je izraženije u našem društvu. Tako i jedna od stvari koja se može unaprijediti je i kontrola ulaza. Čovječanstvo je kontrolu ulaza od antičkog vremena provodilo jednostavnim ključem i bravom.\par
+Dolaskom tehnologija radio frekvencijske identifikacije moguće je zamijeniti takav star i primitivan sustav jednostavnijim sustavom sa strane korisnika. Korisnik više nema potrebu nositi ključeve za svaki ulaz pojedinačno nego može pomoću jedne centralne kartice ili mobilnog uređaja dobiti pristup ulazu. Takvi uređaji nalaze se u džepu većine osoba te nema potrebe za izdavanjem novih.\par
+Ovakav sustav je jednostavno implementirati postavljanjem čitača, računala za poslužitelj i elektroničke brave. Također moguće je implementacija puno većih sustav jer se ovakav tip čitača spaja na mrežu te je moguće putem jednog poslužitelja napraviti sustav u kojem se može kontrolirati ulaz cijele zgrade.\par
+Jedan od nedostataka ovakvog sustava je da u slučaju krađe NFC oznake ili mobilnog uređaja kradljivac ima pristup svim ulazima kao i prvobitni korisnik. Takvom nedostatku se primijeniti još dodatna autentifikacija lozinkom, što ovaj sustav ne podržava.\par
+Konačan zaključak ovog rada je da je ovakva vrsta kontrole ulaza savršeno rješenje za mjesta gdje puno korisnika mora imati pristup, ali i gdje treba provesti evidenciju dolaska i odlaska. Vrlo je jednostavan za implementaciju i smanjuje problem kasnijeg održavanja, a dozvoljava proširenje samog sustava.
+
 
 \bibliography{literatura}
 \bibliographystyle{fer}
 
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+U ovom radu bavi se problematikom implementacije sustava za kontrolu ulaza korištenjem beskontaktnih kartica. Objašnjeni su korišteni alati za razvoj te svi uređaji koji se koriste u implementaciji sustava. Objašnjena je beskontaktna tehnologija niže frekvencije, njena povijest, njen standard donesen od strane NFC Foruma, sigurnosni problemi koje rješava i način identifikacije. Prikazana je arhitektura cijelog sustava od baze podataka, poslužiteljske aplikacije, način funkcioniranja čitača i funkcioniranje cijelog sustava zajedno.
 
-\kljucnerijeci{Ključne riječi, odvojene zarezima.}
+\kljucnerijeci{Kontrola ulaza, Beskontaktne kartice, Beskontaktna tehnologija niže frekvencije, NFC, Python, Čitač kartica, }
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
-\engtitle{Title}
-\begin{abstract}
-Abstract.
+\engtitle{Access control using contactless cards}
 
-\keywords{Keywords.}
+\begin{abstract}
+This paper deals with the issue of implementing an access control system using contactless cards. The development tools used and all devices used in the implementation of the system are explained. The near-field communication technology, its history, its standard developed by the NFC Forum, the security issues it solves and the way the NFC tags are identified are explained. The architecture of the entire system is presented from the database, the server application, how the reader functions, and how the whole system functions together. 
+
+\keywords{Access control, Contactless cards, Near-field communication, NFC, Python, Card reader}
 \end{abstract}
 
 \end{document}
