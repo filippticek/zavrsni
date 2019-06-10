@@ -3,6 +3,8 @@
 \usepackage{dirtree}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{float}
+
 
 \graphicspath{ {./images/} }
 
@@ -356,33 +358,96 @@ Dolazi do inicijalizacije web poslužitelja i dohvaćanje baze podataka. Nakon t
 \end{figure}
 
 \subsection{Parsiranje zahtjeva}
+Kada aplikacija dobije zahtjev od čitača, čitač sve informacije šalje putem URL-a. Zato je potrebno parsirati URL i pronači UID. Za to služi funkcija \textbf{handle\_nfc}.\par
+UID se pronalazi prvo traženjem njegove duljine u bajtima, a zatim se traži identifikacijski broj.\par 
+Funkcija vraća ili duljinu UID-a i UID ili vrijednosti False, False ovisno o uspješnosti pronalaska istih u zahtjevu.
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{parsiranje.png}
 \centering
-\caption{Sekvencijski dijagram sustava}
+\caption{Parsiranje zahtjeva}
 \centering
 \end{figure}
 
 \subsection{Provjera baze podataka}
-
+Nakon parsiranja zahtjeva dolazimo do provjere postoji li dobiveni UID u bazi podataka. Koristimo funkciju \textbf{handle\_nfc}.\par 
+Provjera se izvršava preko instancirane baze \textbf{db} i njene funkcije \textbf{search}. \par 
+Ako postoji UID u bazi zabilježavamo vrijeme, otvaranje vrata i UID te vraćamo \textbf{'Open'}.\par 
+Ako ne postoji UID u bazi zabilježavamo vrijeme, neautoriziran pristup i UID te vraćamo \textbf{'Close'}.\par 
+Ako u zahtjevu nije postojao UID, tj. čitač je poslao svoj dijagnostički zahtjev, vraćamo \textbf{'PING'}. 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{baza.png}
 \centering
-\caption{Sekvencijski dijagram sustava}
+\caption{Provjera baze podataka}
 \centering
 \end{figure}
 
-\subsection{Obrada zahtjeva	}
+\subsection{Obrada zahtjeva}
+Klasa Server čeka HTTP zahtjev od strane čitača. Kada čitač pošalje zahtjev klasa šalje URL zahtjeva prethodno opisanoj funkciji \textbf{handle\_nfc}. \par
+Kada funkcija vrati povratnu informaciju ovisno o njoj šalje čitaču odgovor.\par 
+Nakon slanja odgovora aplikacija se vraća u stanje čekanja zahtjeva.
+
+
 
 \begin{figure}[h]
-\includegraphics[scale=0.5]{server.png}
+\includegraphics[scale=0.6]{grant.png}
 \centering
-\caption{Sekvencijski dijagram sustava}
+\caption{Odgovor kod uspješne autentifikacije}
 \centering
 \end{figure}
 
+\begin{figure}[h]
+\includegraphics[scale=0.6]{deny.png}
+\centering
+\caption{Odgovor kod neuspješne autentifikacije}
+\centering
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[scale=0.6]{ping.png}
+\centering
+\caption{Odgovor kod dijagnostičkog zahtjeva}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{server.png}
+\centering
+\caption{Obrada zahtjeva}
+\centering
+\end{figure}
+
+\newpage
+
 \section{Implementacija}
+Čitač i uređaj na kojoj se pokreće poslužiteljska aplikacija, Raspberry Pi Model 2 B, komuniciraju putem Ethernet priključka.\par 
+Čitač je također i napajan preko Ethernet priključka te je za njegov rad potreban PoE mrežni preklopnik ili PoE ubrizgivač. Kod implementacije rada koristio se Mikrotik Gigabit PoE ubrizgivač u koji se dovodi upredena parica i 48V istosmjerni pretvornik. 
+
+\begin{figure}[h]
+\includegraphics[scale=0.3]{poe.jpg}
+\centering
+\caption{Mirkotik Gigabit PoE ubrizgivač}
+\centering
+\end{figure}
+
+Čitač i Raspberry Pi povezani su međusobno bez upotrebe usmjeritelja. Zato je potrebno na Raspberry Pi-u uspostaviti mrežu. Mreža se uspostavlja preko skripte \textbf{startup.sh}.\par 
+Skripta također šluži za instalaciju baze podataka \textbf{TinyDB} i pokreće poslužiteljsku aplikaciju \textbf{nfc\_handler.py}.
+
+\begin{figure}[h]
+\includegraphics[scale=0.6]{skripta.png}
+\centering
+\caption{Bash skripta startup.sh}
+\centering
+\end{figure}
+
+Zadnja dio sustava je elektronička brava koja otvara bravu kada dobije napon od 12V. Napon dobiva iz čitača koji putem releja kod odgovora od poslužiteljske aplikacije daje napon kroz žice. 
+
+\begin{figure}[h]
+\includegraphics[scale=1]{brava.jpg}
+\centering
+\caption{Elektronička brava}
+\centering
+\end{figure}
 
 \begin{figure}[h]
 \includegraphics[scale=0.5]{arhitektura.png}
@@ -390,6 +455,7 @@ Dolazi do inicijalizacije web poslužitelja i dohvaćanje baze podataka. Nakon t
 \caption{Shema sustava}
 \centering
 \end{figure}
+
 
 \chapter{Zaključak}
 Zaključak.
