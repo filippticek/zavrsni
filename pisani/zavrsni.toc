@@ -1,31 +1,29 @@
 \babel@toc {croatian}{}
 \contentsline {chapter}{\numberline {1}Uvod}{1}
-\contentsline {chapter}{\numberline {2}Opis problema}{2}
-\contentsline {chapter}{\numberline {3}Kori\IeC {\v s}teni razvojni alati}{3}
-\contentsline {section}{\numberline {3.1}GNU/Linux}{3}
-\contentsline {section}{\numberline {3.2}Raspberry Pi}{4}
-\contentsline {section}{\numberline {3.3}Gemini 2000 Orbit IP}{4}
-\contentsline {section}{\numberline {3.4}Python 3}{5}
-\contentsline {section}{\numberline {3.5}TinyDB}{6}
-\contentsline {section}{\numberline {3.6}Vim}{6}
-\contentsline {section}{\numberline {3.7}Git}{7}
-\contentsline {chapter}{\numberline {4}Beskontaktna tehnologija ni\IeC {\v z}e frekvencije (\textbf {NFC})}{8}
-\contentsline {section}{\numberline {4.1}Povijest}{8}
-\contentsline {section}{\numberline {4.2}Tehnolo\IeC {\v s}ki standard}{10}
-\contentsline {section}{\numberline {4.3}Sigurnosni problemi}{11}
-\contentsline {subsection}{\numberline {4.3.1}Prislu\IeC {\v s}kivanje}{11}
-\contentsline {subsection}{\numberline {4.3.2}Korupcija i manipulacija podataka}{11}
-\contentsline {subsection}{\numberline {4.3.3}Presretanje}{12}
-\contentsline {subsection}{\numberline {4.3.4}Kra\IeC {\dj }a}{12}
-\contentsline {section}{\numberline {4.4}Jedinstveni identifikacijski broj (UID)}{12}
-\contentsline {chapter}{\numberline {5}Arhitektura i dizajn sustava}{13}
-\contentsline {section}{\numberline {5.1}Struktura programske podr\IeC {\v s}ke}{13}
-\contentsline {section}{\numberline {5.2}Baza podataka}{13}
-\contentsline {section}{\numberline {5.3}Autentifikacija}{14}
-\contentsline {subsection}{\numberline {5.3.1}Inicijalizacija aplikacije}{15}
-\contentsline {subsection}{\numberline {5.3.2}Parsiranje zahtjeva}{16}
-\contentsline {subsection}{\numberline {5.3.3}Provjera baze podataka}{17}
-\contentsline {subsection}{\numberline {5.3.4}Obrada zahtjeva}{17}
-\contentsline {section}{\numberline {5.4}Implementacija}{19}
-\contentsline {chapter}{\numberline {6}Zaklju\IeC {\v c}ak}{21}
-\contentsline {chapter}{Literatura}{22}
+\contentsline {chapter}{\numberline {2}NFC tehnologija}{2}
+\contentsline {section}{\numberline {2.1}Povijest}{2}
+\contentsline {section}{\numberline {2.2}Tehnolo\IeC {\v s}ki standard}{3}
+\contentsline {section}{\numberline {2.3}Sigurnosni problemi NFC tehnologije}{5}
+\contentsline {subsection}{\numberline {2.3.1}Prislu\IeC {\v s}kivanje}{5}
+\contentsline {subsection}{\numberline {2.3.2}Korupcija i manipulacija podataka}{5}
+\contentsline {subsection}{\numberline {2.3.3}Presretanje}{5}
+\contentsline {subsection}{\numberline {2.3.4}Kra\IeC {\dj }a}{5}
+\contentsline {section}{\numberline {2.4}Jedinstveni identifikacijski broj (UID)}{6}
+\contentsline {chapter}{\numberline {3}Sustav za autentifikaciju na temelju beskontaktnih kartica}{7}
+\contentsline {section}{\numberline {3.1}Kori\IeC {\v s}teni razvojni alati}{7}
+\contentsline {subsection}{\numberline {3.1.1}Operacijski sustav GNU/Linux}{7}
+\contentsline {subsection}{\numberline {3.1.2}Ugradbeno ra\IeC {\v c}unalo Raspberry Pi}{8}
+\contentsline {subsection}{\numberline {3.1.3}NFC \IeC {\v c}ita\IeC {\v c} Gemini 2000 Orbit IP}{8}
+\contentsline {subsection}{\numberline {3.1.4}Programski jezik Python 3}{9}
+\contentsline {subsection}{\numberline {3.1.5}Baza podataka TinyDB}{10}
+\contentsline {section}{\numberline {3.2}Arhitektura i dizajn sustava}{10}
+\contentsline {subsection}{\numberline {3.2.1}Struktura programske podr\IeC {\v s}ke}{10}
+\contentsline {subsection}{\numberline {3.2.2}Baza podataka}{11}
+\contentsline {subsection}{\numberline {3.2.3}Autentifikacija}{11}
+\contentsline {subsubsection}{Inicijalizacija aplikacije}{12}
+\contentsline {subsubsection}{Parsiranje zahtjeva}{13}
+\contentsline {subsubsection}{Provjera baze podataka}{13}
+\contentsline {subsubsection}{Obrada zahtjeva}{14}
+\contentsline {subsection}{\numberline {3.2.4}Integrirano rje\IeC {\v s}enje za kontrolu ulaza}{17}
+\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{19}
+\contentsline {chapter}{Literatura}{20}

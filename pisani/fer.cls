@@ -92,8 +92,8 @@
 \if@fontlmodern\RequirePackage{lmodern} \fi
 
 % Postavljanje stila citiranja
-\if@citeauthoryear \RequirePackage[authoryear, round]{natbib}
-\else \RequirePackage[numbers, square]{natbib}
+\if@citeauthoryear \RequirePackage[numbers, square]{natbib}
+\else \RequirePackage[authoryear, round]{natbib}
 \fi
 
 % Umjesto poziva \RequirePackage[outsidefoot]{pageno}.
