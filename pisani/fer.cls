@@ -84,7 +84,7 @@
 \if@radseminar%
 \RequirePackage[nottoc, numbib, chapter]{tocbibind}
 \else
-\RequirePackage[nottoc]{tocbibind}
+\RequirePackage[nottoc, numbib, chapter]{tocbibind}
 \fi
 
 % Postavljanje fonta

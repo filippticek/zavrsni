@@ -13,47 +13,50 @@ Warning--to sort, need author or key in 8
 Warning--to sort, need author or key in 9
 Warning--to sort, need author or key in 10
 Warning--to sort, need author or key in 11
+Warning--to sort, need author or key in 16
 Warning--to sort, need author or key in 12
 Warning--to sort, need author or key in 13
-You've used 13 entries,
+Warning--to sort, need author or key in 14
+Warning--to sort, need author or key in 15
+You've used 16 entries,
             2773 wiz_defined-function locations,
-            644 strings with 6273 characters,
-and the built_in function-call counts, 3371 in all, are:
-= -- 341
+            652 strings with 6532 characters,
+and the built_in function-call counts, 4129 in all, are:
+= -- 419
 > -- 10
 < -- 1
-+ -- 16
++ -- 19
 - -- 3
-* -- 237
-:= -- 326
-add.period$ -- 40
-call.type$ -- 13
-change.case$ -- 40
-chr.to.int$ -- 13
-cite$ -- 50
-duplicate$ -- 199
-empty$ -- 451
+* -- 290
+:= -- 393
+add.period$ -- 50
+call.type$ -- 16
+change.case$ -- 48
+chr.to.int$ -- 16
+cite$ -- 62
+duplicate$ -- 244
+empty$ -- 556
 format.name$ -- 4
-if$ -- 810
+if$ -- 996
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 1
-newline$ -- 74
+newline$ -- 90
 num.names$ -- 4
-pop$ -- 164
+pop$ -- 202
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 33
 quote$ -- 0
-skip$ -- 157
+skip$ -- 194
 stack$ -- 0
-substring$ -- 38
-swap$ -- 26
+substring$ -- 47
+swap$ -- 32
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
-warning$ -- 12
+type$ -- 176
+warning$ -- 15
 while$ -- 3
 width$ -- 0
-write$ -- 165
-(There were 12 warnings)
+write$ -- 202
+(There were 15 warnings)

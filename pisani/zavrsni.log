@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.23)  11 JUN 2019 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.23)  11 JUN 2019 21:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,32 +807,32 @@ Poglavlje 1.
 
 ]
 Poglavlje 2.
-<./images/nfcuse.jpeg, id=24, 627.34375pt x 481.8pt>
+<./images/nfcuse.jpeg, id=25, 627.34375pt x 481.8pt>
 File: ./images/nfcuse.jpeg Graphic file (type jpg)
 <use ./images/nfcuse.jpeg>
-Package pdftex.def Info: ./images/nfcuse.jpeg  used on input line 82.
+Package pdftex.def Info: ./images/nfcuse.jpeg  used on input line 83.
 (pdftex.def)             Requested size: 250.93304pt x 192.71658pt.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 84.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 85.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 88.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 89.
 [2
 
 ] [3 <./images/nfcuse.jpeg>]
 <./images/nfctag.png, id=33, 777.90625pt x 722.7pt>
 File: ./images/nfctag.png Graphic file (type png)
 <use ./images/nfctag.png>
-Package pdftex.def Info: ./images/nfctag.png  used on input line 111.
+Package pdftex.def Info: ./images/nfctag.png  used on input line 112.
 (pdftex.def)             Requested size: 155.57849pt x 144.53743pt.
  [4 <./images/nfctag.png>] [5] [6]
 Poglavlje 3.
 [7
 
 ]
-Overfull \hbox (2.66423pt too wide) in paragraph at lines 165--165
+Overfull \hbox (2.66423pt too wide) in paragraph at lines 168--168
 []\T1/ptm/m/n/12 GNU/Linux da-nas po-kre¢e ve-¢inu pos-lu-ºi-telj-skih ra-£u-na
 la, mo-bil-nih te-le-fona, ugra-
  []
@@ -841,75 +841,83 @@ la, mo-bil-nih te-le-fona, ugra-
 <./images/orbit.jpg, id=50, 903.375pt x 1204.5pt>
 File: ./images/orbit.jpg Graphic file (type jpg)
 <use ./images/orbit.jpg>
-Package pdftex.def Info: ./images/orbit.jpg  used on input line 193.
+Package pdftex.def Info: ./images/orbit.jpg  used on input line 196.
 (pdftex.def)             Requested size: 180.6718pt x 240.89574pt.
  [9 <./images/orbit.jpg>] [10]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 251.
+(caption)                outside box or environment on input line 254.
 See the caption package documentation for explanation.
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 266.
+[11]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 269.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
- [11]
-<./images/sequence.png, id=63, 731.73375pt x 815.045pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 269.
+<./images/sequence.png, id=62, 731.73375pt x 815.045pt>
 File: ./images/sequence.png Graphic file (type png)
 <use ./images/sequence.png>
-Package pdftex.def Info: ./images/sequence.png  used on input line 274.
+Package pdftex.def Info: ./images/sequence.png  used on input line 277.
 (pdftex.def)             Requested size: 365.86598pt x 407.5215pt.
- [12 <./images/sequence.png>]
-<./images/init.png, id=69, 843.15pt x 362.35374pt>
-File: ./images/init.png Graphic file (type png)
-<use ./images/init.png>
-Package pdftex.def Info: ./images/init.png  used on input line 301.
-(pdftex.def)             Requested size: 421.57396pt x 181.17642pt.
 
-Overfull \hbox (9.00899pt too wide) in paragraph at lines 301--303
- [][] 
- []
-
-<./images/parsiranje.png, id=70, 556.0775pt x 162.6075pt>
-File: ./images/parsiranje.png Graphic file (type png)
-<use ./images/parsiranje.png>
-Package pdftex.def Info: ./images/parsiranje.png  used on input line 313.
-(pdftex.def)             Requested size: 278.03807pt x 81.30354pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./images/init.png>]
-<./images/baza.png, id=75, 813.0375pt x 276.03125pt>
+<./images/init.png, id=64, 843.15pt x 362.35374pt>
+File: ./images/init.png Graphic file (type png)
+<use ./images/init.png>
+Package pdftex.def Info: ./images/init.png  used on input line 304.
+(pdftex.def)             Requested size: 421.57396pt x 181.17642pt.
+
+Overfull \hbox (9.00899pt too wide) in paragraph at lines 304--306
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12]
+<./images/parsiranje.png, id=69, 556.0775pt x 162.6075pt>
+File: ./images/parsiranje.png Graphic file (type png)
+<use ./images/parsiranje.png>
+Package pdftex.def Info: ./images/parsiranje.png  used on input line 316.
+(pdftex.def)             Requested size: 278.03807pt x 81.30354pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./images/sequence.png>]
+<./images/baza.png, id=74, 813.0375pt x 276.03125pt>
 File: ./images/baza.png Graphic file (type png)
 <use ./images/baza.png>
-Package pdftex.def Info: ./images/baza.png  used on input line 326.
+Package pdftex.def Info: ./images/baza.png  used on input line 329.
 (pdftex.def)             Requested size: 406.51776pt x 138.01527pt.
-<./images/grant.png, id=76, 353.32pt x 192.72pt>
+ [14 <./images/init.png> <./images/parsiranje.png> <./images/baza.png>]
+<./images/grant.png, id=81, 353.32pt x 192.72pt>
 File: ./images/grant.png Graphic file (type png)
 <use ./images/grant.png>
-Package pdftex.def Info: ./images/grant.png  used on input line 339.
+Package pdftex.def Info: ./images/grant.png  used on input line 342.
 (pdftex.def)             Requested size: 211.99364pt x 115.63287pt.
- [14 <./images/parsiranje.png> <./images/baza.png>]
 <./images/deny.png, id=82, 339.2675pt x 188.705pt>
 File: ./images/deny.png Graphic file (type png)
 <use ./images/deny.png>
-Package pdftex.def Info: ./images/deny.png  used on input line 346.
+Package pdftex.def Info: ./images/deny.png  used on input line 349.
 (pdftex.def)             Requested size: 203.56206pt x 113.22386pt.
 <./images/ping.png, id=83, 326.21875pt x 166.6225pt>
 File: ./images/ping.png Graphic file (type png)
 <use ./images/ping.png>
-Package pdftex.def Info: ./images/ping.png  used on input line 353.
+Package pdftex.def Info: ./images/ping.png  used on input line 356.
 (pdftex.def)             Requested size: 195.73274pt x 99.97426pt.
 <./images/server.png, id=84, 888.31876pt x 434.62375pt>
 File: ./images/server.png Graphic file (type png)
 <use ./images/server.png>
-Package pdftex.def Info: ./images/server.png  used on input line 360.
+Package pdftex.def Info: ./images/server.png  used on input line 363.
 (pdftex.def)             Requested size: 444.1583pt x 217.31134pt.
 
-Overfull \hbox (31.59332pt too wide) in paragraph at lines 360--362
+Overfull \hbox (31.59332pt too wide) in paragraph at lines 363--365
  [][] 
  []
 
@@ -918,17 +926,17 @@ Overfull \hbox (31.59332pt too wide) in paragraph at lines 360--362
 <./images/poe.jpg, id=96, 602.25pt x 602.25pt>
 File: ./images/poe.jpg Graphic file (type jpg)
 <use ./images/poe.jpg>
-Package pdftex.def Info: ./images/poe.jpg  used on input line 373.
+Package pdftex.def Info: ./images/poe.jpg  used on input line 376.
 (pdftex.def)             Requested size: 180.67639pt x 180.67639pt.
 <./images/skripta.png, id=97, 422.57875pt x 131.49126pt>
 File: ./images/skripta.png Graphic file (type png)
 <use ./images/skripta.png>
-Package pdftex.def Info: ./images/skripta.png  used on input line 383.
+Package pdftex.def Info: ./images/skripta.png  used on input line 386.
 (pdftex.def)             Requested size: 253.5492pt x 78.89534pt.
 <./images/brava.jpg, id=98, 144.54pt x 144.54pt>
 File: ./images/brava.jpg Graphic file (type jpg)
 <use ./images/brava.jpg>
-Package pdftex.def Info: ./images/brava.jpg  used on input line 392.
+Package pdftex.def Info: ./images/brava.jpg  used on input line 395.
 (pdftex.def)             Requested size: 144.53963pt x 144.53963pt.
 
 
@@ -937,7 +945,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/arhitektura.png, id=99, 526.96875pt x 838.13126pt>
 File: ./images/arhitektura.png Graphic file (type png)
 <use ./images/arhitektura.png>
-Package pdftex.def Info: ./images/arhitektura.png  used on input line 399.
+Package pdftex.def Info: ./images/arhitektura.png  used on input line 402.
 (pdftex.def)             Requested size: 263.48372pt x 419.0646pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -948,6 +956,8 @@ Poglavlje 4.
 (./zavrsni.bbl [19
 
 ]
+Poglavlje 5.
+
 Underfull \hbox (badness 7851) in paragraph at lines 14--17
 []\T1/ptm/m/n/12 History of Near Fi-eld Com-mu-ni-ca-tion - Ne-ar-Fi-el-d-Com-m
 u-ni-ca-tion.org,
@@ -991,29 +1001,58 @@ Underfull \hbox (badness 2165) in paragraph at lines 36--39
 [20
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
+[]\T1/ptm/m/n/12 Jun 2019.  URL $\T1/pcr/m/n/12 http : / / www . ellabo . hr / 
+pd /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--61
+\T1/pcr/m/n/12 elektro-[]prihvatnik-[]8-[]12v-[]deblokada-[]senzor / ET1719015 
+/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
+[]\T1/ptm/m/n/12 Orbit IP: PoE NFC Re-ader - Ge-mini 2000, Jun 2019.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--67
+\T1/ptm/m/n/12 URL $\T1/pcr/m/n/12 http : / / www . gemini2k . com / shop / nfc
+-[]devices /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
 []\T1/ptm/m/n/12 What is Li-nux?, Jun 2019.  URL $\T1/pcr/m/n/12 https : / / ww
 w . linux . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
+Underfull \hbox (badness 10000) in paragraph at lines 89--95
 []\T1/ptm/m/n/12 Blue Bite.  The Pro-mi-sing Fu-ture of NFC.  \T1/ptm/m/it/12 M
 e-dium\T1/ptm/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--77
+Underfull \hbox (badness 10000) in paragraph at lines 89--95
 \T1/ptm/m/n/12 May 2018.  URL $\T1/pcr/m/n/12 https : / / medium . com / blue-[
 ]bite /
  []
 
+
+Underfull \hbox (badness 5022) in paragraph at lines 89--95
+\T1/pcr/m/n/12 the-[]promising-[]future-[]of-[]nfc-[]d172f6905b7b$\T1/ptm/m/n/1
+2 .  [Online; ac-
+ []
+
 ) [21] [22] (./zavrsni.aux) ) 
 Here is how much of TeX's memory you used:
- 8310 strings out of 493838
- 112781 string characters out of 6154126
- 217065 words of memory out of 5000000
- 11611 multiletter control sequences out of 15000+600000
+ 8319 strings out of 493838
+ 112871 string characters out of 6154126
+ 217146 words of memory out of 5000000
+ 11620 multiletter control sequences out of 15000+600000
  62134 words of font info for 81 fonts, out of 8000000 for 9000
  600 hyphenation exceptions out of 8191
  43i,8n,42p,695b,1129s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1026,7 +1065,7 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on zavrsni.pdf (26 pages, 734051 bytes).
+Output written on zavrsni.pdf (26 pages, 736395 bytes).
 PDF statistics:
  153 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream

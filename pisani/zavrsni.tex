@@ -68,8 +68,9 @@
 \chapter{Uvod}
 U današnjem svijetu pokušavamo povezati sve više stvari, uređaja i pomagala s tehnologijom. Na taj način se pokušava olakšati korištenje i mogućnost automatizacije pomoću jednog centralnog mjesta. Takva rješenja nam omogućuju korištenje jednog uređaja za upotrebu u plaćanju, identifikaciji te mnogim drugim stvarima. Neki od centralnih mjesta su mobilni telefoni te beskontaktne kartice koje se nalaze u džepu većine današnjeg stanovništva.\par
 Kontrola ulaza je jedan od poslova koji se od antičkih civilizacija prepuštalo da obavlja čovjek. Vrata koja su koristila mehanizme ključa i brave nisu dopuštale odstupanje od te norme. Tek pojavom kartica s magnetskom trakom došlo je do promjena. Takve kartice dopuštale su da se svakoj osobi dodijeli jedinstveni identifikator. Pomoću čitača kartica koje su sadržavale spremljene identifikatore moglo se dopustiti ulaz samo određenim osobama i ujedno voditi evidencija pristupa. Jedna od mana ovakve tehnologije je što korisnik treba karticu dovesti u direktan kontakt s čitačem te mogućnost jednostavnog repliciranja informacija spremljenih na njima.\par
-Tehnologije kao što su radio-frekvencijska identifikacija (\textbf{RFID}) ,nastala 1983. godine, te beskontaktna tehnologija niže frekvencije (\textbf{NFC}), nastala 2003. godine, dozvoljavaju udaljenu komunikaciju između čitača i kartice ili oznake. U današnje vrijeme zamijenile su upotrebu kartica s magnetskom trakom zbog veće sigurnosti i u slučaju RFID-a mogućnosti za praćenjem položaja kartice ili oznake korištenjem komunikacije velikih frekvencija.\par
-Danas se najčešće za kontrolu ulaza koristi beskontaktna tehnologija niže frekvencije zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim akademskim iskaznicama, što ne zahtijeva uvođenjem posebnih oznaka kao u slučaju radio-frekvencijske komunikacije.
+Tehnologije kao što su radio-frekvencijska identifikacija (RFID) te NFC (eng. \textit{Near field communication}), dozvoljavaju udaljenu komunikaciju između čitača i kartice ili oznake. U današnje vrijeme zamijenile su upotrebu kartica s magnetskom trakom zbog veće sigurnosti i u slučaju RFID-a mogućnosti za praćenjem položaja kartice ili oznake korištenjem komunikacije velikih frekvencija.\par
+Danas se najčešće za kontrolu ulaza koristi beskontaktna tehnologija niže frekvencije zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim akademskim iskaznicama, što ne zahtijeva uvođenje posebnih oznaka kao u slučaju RFID-a. \par 
+U sljedećem poglavlju obrađuje se pojedinosti NFC tehnologije, a nakon toga sustav za autentifikaciju na temelju beskontaktnih kartica.
 
 \chapter{NFC tehnologija}
 Beskontaktna tehnologija niže frekvencije, (eng. \textit{Near field communication}) ili skraćeno NFC je vrsta beskontaktne komunikacije između uređaja poput mobilnih telefona i beskontaktnih kartica. Beskontaktna komunikacija dozvoljava komunikaciju na male udaljenosti bez potrebe da uređaji dolaze u neposredni doticaj. \par
@@ -81,7 +82,7 @@ U današnje vrijeme sve više poduzeća implementira beskontaktne tehnologije u 
 \begin{figure}[h]
 \includegraphics[scale=0.4]{nfcuse.jpeg}
 \centering
-\caption{Upotreba NFC-a \citep{2}}
+\caption[]{Upotreba NFC-a \citep{2}}
 \centering
 \end{figure}
 
@@ -110,7 +111,7 @@ Prateći ove specifikacije osiguravamo da svi NFC uređaji mogu međusobno komun
 \begin{figure}[h]
 \includegraphics[scale=0.2]{nfctag.png}
 \centering
-\caption{Unutrašnjost NFC oznake \citep{5}}
+\caption[]{Unutrašnjost NFC oznake \citep{5}}
 \centering
 \end{figure}
 
@@ -134,7 +135,9 @@ Svaka NFC oznaka ima svoj globalno jedinstven, dobiven od strane proizvođača i
 UID nije potpuno slučajan. Prvi bajt predstavlja proizvođača oznake, a ostatak je dodijeljen ovisno o proizvođaču.
 \citep{7}
 
-\chapter{Sustav za autentifikaciju na temelju beskontaktnih kartica}
+\chapter{Sustav za kontrolu ulaza korištenjem beskontaktnih kartica}
+\section{Motivacija i opis problema}
+Sustavi za kontrolu ulaza korištenjem beskontaktnih kartica danas su sve više prisutniji u današnjem društvu. Motivacija ovog rada je bila razviti vlastiti sustav koji je moguće lako integrirati i održavati. Sustav se može upotrebiti na vlastitim kućnim vratima, vratima prostorija i raznim područjima na kojima se treba provesti kontrola pristupa. Sustav zamjenjuje potrebu za nošenjem dodatnih ključeva što zamjenjuje beskontaktnim karticama i dozvoljava provedbu evidencije pristupa.  \par
 Sustav za kontrolu ulaza treba se sastojati od nekoliko dijelova:
 
 \begin{itemize}
@@ -157,7 +160,7 @@ Proces kojim bi sustav trebao raditi je:
 \item Čitač ovisno o odgovoru uređaja otvara mehaničku bravu ili signalizira korisniku da nema pristup
 \end{itemize}
 
-\section{Korišteni razvojni alati}
+\section{Korišteni razvojni alati i uređaji}
 
 \subsection{Operacijski sustav GNU/Linux}	
 GNU/Linux je operacijski sustav temeljen na Linux jezgri i GNU programskoj potpori te je temeljen na principima otvorenog koda. Jezgra je nastala 1991. godine od strane Linusa Torvaldsa. Razvijana je po uzoru na UNIX operacijski sustav.\citep{8} \par 
@@ -192,7 +195,7 @@ Kod implementacije rada napravljena je mreža samo između Raspberry Pi-a i čit
 \begin{figure}[H]
 \includegraphics[scale=0.2]{orbit.jpg}
 \centering
-\caption{Gemini 2000 Orbit IP}
+\caption{Gemini 2000 Orbit IP \citep{16}}
 \centering
 \end{figure}
 
@@ -372,7 +375,7 @@ Nakon slanja odgovora aplikacija se vraća u stanje čekanja zahtjeva.
 \begin{figure}[h]
 \includegraphics[scale=0.3]{poe.jpg}
 \centering
-\caption{Mirkotik Gigabit PoE ubrizgivač}
+\caption{Mirkotik Gigabit PoE ubrizgivač \citep{14}}
 \centering
 \end{figure}
 
@@ -391,7 +394,7 @@ Zadnja dio sustava je elektronička brava koja otvara bravu kada dobije napon od
 \begin{figure}[h]
 \includegraphics[scale=1]{brava.jpg}
 \centering
-\caption{Elektronička brava}
+\caption{Elektronička brava \citep{15}}
 \centering
 \end{figure}
 

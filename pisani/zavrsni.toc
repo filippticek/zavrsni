@@ -9,21 +9,22 @@
 \contentsline {subsection}{\numberline {2.3.3}Presretanje}{5}
 \contentsline {subsection}{\numberline {2.3.4}Kra\IeC {\dj }a}{5}
 \contentsline {section}{\numberline {2.4}Jedinstveni identifikacijski broj (UID)}{6}
-\contentsline {chapter}{\numberline {3}Sustav za autentifikaciju na temelju beskontaktnih kartica}{7}
-\contentsline {section}{\numberline {3.1}Kori\IeC {\v s}teni razvojni alati}{7}
-\contentsline {subsection}{\numberline {3.1.1}Operacijski sustav GNU/Linux}{7}
-\contentsline {subsection}{\numberline {3.1.2}Ugradbeno ra\IeC {\v c}unalo Raspberry Pi}{8}
-\contentsline {subsection}{\numberline {3.1.3}NFC \IeC {\v c}ita\IeC {\v c} Gemini 2000 Orbit IP}{8}
-\contentsline {subsection}{\numberline {3.1.4}Programski jezik Python 3}{9}
-\contentsline {subsection}{\numberline {3.1.5}Baza podataka TinyDB}{10}
-\contentsline {section}{\numberline {3.2}Arhitektura i dizajn sustava}{10}
-\contentsline {subsection}{\numberline {3.2.1}Struktura programske podr\IeC {\v s}ke}{10}
-\contentsline {subsection}{\numberline {3.2.2}Baza podataka}{11}
-\contentsline {subsection}{\numberline {3.2.3}Autentifikacija}{11}
+\contentsline {chapter}{\numberline {3}Sustav za kontrolu ulaza kori\IeC {\v s}tenjem beskontaktnih kartica}{7}
+\contentsline {section}{\numberline {3.1}Motivacija i opis problema}{7}
+\contentsline {section}{\numberline {3.2}Kori\IeC {\v s}teni razvojni alati i ure\IeC {\dj }aji}{8}
+\contentsline {subsection}{\numberline {3.2.1}Operacijski sustav GNU/Linux}{8}
+\contentsline {subsection}{\numberline {3.2.2}Ugradbeno ra\IeC {\v c}unalo Raspberry Pi}{8}
+\contentsline {subsection}{\numberline {3.2.3}NFC \IeC {\v c}ita\IeC {\v c} Gemini 2000 Orbit IP}{9}
+\contentsline {subsection}{\numberline {3.2.4}Programski jezik Python 3}{10}
+\contentsline {subsection}{\numberline {3.2.5}Baza podataka TinyDB}{10}
+\contentsline {section}{\numberline {3.3}Arhitektura i dizajn sustava}{10}
+\contentsline {subsection}{\numberline {3.3.1}Struktura programske podr\IeC {\v s}ke}{11}
+\contentsline {subsection}{\numberline {3.3.2}Baza podataka}{11}
+\contentsline {subsection}{\numberline {3.3.3}Autentifikacija}{12}
 \contentsline {subsubsection}{Inicijalizacija aplikacije}{12}
 \contentsline {subsubsection}{Parsiranje zahtjeva}{13}
 \contentsline {subsubsection}{Provjera baze podataka}{13}
-\contentsline {subsubsection}{Obrada zahtjeva}{14}
-\contentsline {subsection}{\numberline {3.2.4}Integrirano rje\IeC {\v s}enje za kontrolu ulaza}{17}
+\contentsline {subsubsection}{Obrada zahtjeva}{15}
+\contentsline {subsection}{\numberline {3.3.4}Integrirano rje\IeC {\v s}enje za kontrolu ulaza}{17}
 \contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{19}
-\contentsline {chapter}{Literatura}{20}
+\contentsline {chapter}{\numberline {5}Literatura}{20}
