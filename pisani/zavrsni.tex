@@ -4,6 +4,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{pdfpages}
+
 
 
 \graphicspath{ {./images/} }
@@ -58,7 +60,8 @@
 \maketitle
 
 % Ispis stranice s napomenom o umetanju izvornika rada. Uklonite naredbu \izvornik ako želite izbaciti tu stranicu.
-\izvornik
+\includepdf[pages=-]{./images/izvornik.pdf}
+
 
 % Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
 \zahvala{}
@@ -69,10 +72,10 @@
 U današnjem svijetu pokušavamo povezati sve više stvari, uređaja i pomagala s tehnologijom. Na taj način se pokušava olakšati korištenje i mogućnost automatizacije pomoću jednog centralnog mjesta. Takva rješenja nam omogućuju korištenje jednog uređaja za upotrebu u plaćanju, identifikaciji te mnogim drugim stvarima. Neki od centralnih mjesta su mobilni telefoni te beskontaktne kartice koje se nalaze u džepu većine današnjeg stanovništva.\par
 Kontrola ulaza je jedan od poslova koji se od antičkih civilizacija prepuštalo da obavlja čovjek. Vrata koja su koristila mehanizme ključa i brave nisu dopuštale odstupanje od te norme. Tek pojavom kartica s magnetskom trakom došlo je do promjena. Takve kartice dopuštale su da se svakoj osobi dodijeli jedinstveni identifikator. Pomoću čitača kartica koje su sadržavale spremljene identifikatore moglo se dopustiti ulaz samo određenim osobama i ujedno voditi evidencija pristupa. Jedna od mana ovakve tehnologije je što korisnik treba karticu dovesti u direktan kontakt s čitačem te mogućnost jednostavnog repliciranja informacija spremljenih na njima.\par
 Tehnologije kao što su radio-frekvencijska identifikacija (RFID) te NFC (eng. \textit{Near field communication}), dozvoljavaju udaljenu komunikaciju između čitača i kartice ili oznake. U današnje vrijeme zamijenile su upotrebu kartica s magnetskom trakom zbog veće sigurnosti i u slučaju RFID-a mogućnosti za praćenjem položaja kartice ili oznake korištenjem komunikacije velikih frekvencija.\par
-Danas se najčešće za kontrolu ulaza koristi NFC tehnologija zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim akademskim iskaznicama, što ne zahtijeva uvođenje posebnih oznaka kao u slučaju RFID-a. \par 
-U sljedećem poglavlju obrađuje se pojedinosti NFC tehnologije, a nakon toga sustav za autentifikaciju na temelju beskontaktnih kartica.
+Danas se najčešće za kontrolu ulaza koristi tehnologija NFC zbog raširenosti u mobilnim telefonima i u slučaju studentske akademske zajednice Republike Hrvatske u njihovim akademskim iskaznicama, što ne zahtijeva uvođenje posebnih oznaka kao u slučaju RFID-a. \par 
+U sljedećem poglavlju obrađuje se pojedinosti tehnologije NFC, a nakon toga sustav za autentifikaciju na temelju beskontaktnih kartica. Konačno u zaključku se iznose pozitivne i negativne strane sustava te njegova svrha.
 
-\chapter{NFC tehnologija}
+\chapter{Tehnologija NFC}
 NFC (eng. \textit{Near field communication}) je vrsta beskontaktne komunikacije između uređaja poput mobilnih telefona i beskontaktnih kartica. Beskontaktna komunikacija dozvoljava komunikaciju na male udaljenosti bez potrebe da uređaji dolaze u neposredni doticaj. \par
 NFC dozvoljava uređaju, koji služi kao čitač, tj. ispitivač, proizvodi aktivno radio frekvenciju što mu dozvoljava da komunicira s ostalim NFC kompatibilnim uređajima ili karticama. Pasivni uređaji poput beskontaktnih kartica i oznaka, imaju spremljenu informaciju te tu informaciju razmjenjuju s čitačima, ali ne dozvoljavaju čitanje informacija drugih uređaja. Kod komunikacije dva aktivna uređaja postoji obostrana komunikacija slanja i primanja informacija.\par 
 Integracija beskontaktnih tehnologija u kreditne, putničke i kuponske kartice dozvoljava korisnicima da obavljaju plaćanja, ukrcavanje na javni prijevoz i razmjenu informacija preko jednostavnog  približavanja kartica. Također postoji mogućnost integracije više usluga preko mobilnih telefona te tako eliminirati korištenje različitih kartica za različite usluge.\par 
@@ -88,14 +91,14 @@ U današnje vrijeme sve više poduzeća implementira beskontaktne tehnologije u 
 
 \section{Povijest}
 NFC je nastao na temeljima radio-frekvencijske identifikacije (RFID). NFC je podset RFID-a s kraćim dometom zbog sigurnosnih razloga.\par 
-2004. godine Nokia, Sony i Philips zajedno su formirali NFC Forum. Njihov zajednički cilj je bio promoviranje sigurnosti, jednostavnosti korištenja i popularnosti NFC tehnologije. Zaduženje Foruma je održavanje standarda koji dozvoljava da tehnologija može funkcionirati između sva uređaja. Ako netko želi proizvesti NFC uređaj potrebno je slijediti standarde postavljene od strane NFC Foruma. To osigurava da korisnik s bilo kojim NFC uređajem može komunicirati s nekim drugim NFC uređajem.\par
-Iako je NFC Forum formiran 2004. godine, prve specifikacije za NFC oznake su se pojavile 2006. godine. NFC oznake su mali objekti koji sadrže informacije koje NFC čitaći mogu pročitati. Informacije na oznakama se u većini slučajeva mogu samo čitati, ali postoje i oznake u koje se mogu upisati nove ili promijeniti stare informacije.\par 
-Prvi mobilni telefon koji je sadržavao NFC sposobnosti je bila Nokia 6131 NFC predstavljena 2006. godine. Sazrijevanjem tehnologije dolazile su i nove specifikacije koje su osim podržavanja plaćanja dozvoljavale i razmjenu slika, videa i ostalih informacija. Danas je NFC tehnologija dostupna na većini mobilnih uređaja, od telefona, pametnih satova do integracije u automobile.
+2004. godine Nokia, Sony i Philips zajedno su formirali NFC Forum. Njihov zajednički cilj je bio promoviranje sigurnosti, jednostavnosti korištenja i popularnosti tehnologije NFC. Zaduženje Foruma je održavanje standarda koji dozvoljava da tehnologija može funkcionirati između sva uređaja. Ako netko želi proizvesti NFC uređaj potrebno je slijediti standarde postavljene od strane NFC Foruma. To osigurava da korisnik s bilo kojim NFC uređajem može komunicirati s nekim drugim NFC uređajem.\par
+Iako je NFC Forum formiran 2004. godine, prve specifikacije za NFC oznake su se pojavile 2006. godine. NFC oznake su mali objekti koji sadrže informacije koje NFC čitači mogu pročitati. Informacije na oznakama se u većini slučajeva mogu samo čitati, ali postoje i oznake u koje se mogu upisati nove ili promijeniti stare informacije.\par 
+Prvi mobilni telefon koji je sadržavao NFC sposobnosti je bila Nokia 6131 NFC predstavljena 2006. godine. Sazrijevanjem tehnologije dolazile su i nove specifikacije koje su osim podržavanja plaćanja dozvoljavale i razmjenu slika, videa i ostalih informacija. Danas je tehnologija NFC dostupna na većini mobilnih uređaja, od telefona, pametnih satova do integracije u automobile.
 \citep{3}
 
 
 \section{Tehnološki standard}
-Kada se razvijaju NFC uređaji potrebno je pratiti NFC standarde. Standardi postoje da sve vrste NFC uređaja mogu međusobno komunicirati kako oni dizajnirani u prošlosti tako i u budućnosti. Postoje dvije vrste glavnih specifikacija za NFC tehnologiju:
+Kada se razvijaju NFC uređaji potrebno je pratiti NFC standarde. Standardi postoje da sve vrste NFC uređaja mogu međusobno komunicirati kako oni dizajnirani u prošlosti tako i u budućnosti. Postoje dvije vrste glavnih specifikacija za tehnologiju NFC:
 \begin{itemize}
 \item ISO/IEC 14443 koja definira identifikacijske kartice koje spremaju informacije, poput NFC oznaka
 \item ISO/IEC 18000-3 koja definira radio-frekvencijsku identifikacijsku komunikacijsko NFC uređaja
@@ -115,8 +118,8 @@ Prateći ove specifikacije osiguravamo da svi NFC uređaji mogu međusobno komun
 \centering
 \end{figure}
 
-\section{Sigurnosni problemi NFC tehnologije}
-Korisnici NFC tehnologije se naravno pitaju koji su sigurnosni rizici pogotovo oni koji ju koriste za kartična plaćanja. Jesu li njihove informacije sigurne i otporne na krađu? U nastavku su neki od sigurnosnih problema koji se mogu pojaviti i kako NFC tehnologija ih sprječava.
+\section{Sigurnosni problemi tehnologije NFC}
+Korisnici tehnologije NFC se naravno pitaju koji su sigurnosni rizici pogotovo oni koji ju koriste za kartična plaćanja. Jesu li njihove informacije sigurne i otporne na krađu? U nastavku su neki od sigurnosnih problema koji se mogu pojaviti i kako tehnologija NFC ih sprječava.
 \subsection{Prisluškivanje}
 Prisluškivanje se dešava kada osoba prati komunikaciju između čitača i oznaka. Nije potrebno pratiti svaki signal da bi se prikupila privatna informacija. Postoje dvije metode kako spriječiti prisluškivanje:
 \begin{itemize}
@@ -136,17 +139,16 @@ UID nije potpuno slučajan. Prvi bajt predstavlja proizvođača oznake, a ostata
 \citep{7}
 
 \chapter{Sustav za kontrolu ulaza korištenjem beskontaktnih kartica}
-\section{Motivacija i opis problema}
 Sustavi za kontrolu ulaza korištenjem beskontaktnih kartica danas su sve više prisutniji u današnjem društvu. Motivacija ovog rada je bila razviti vlastiti sustav koji je moguće lako integrirati i održavati. Sustav se može upotrebiti na vlastitim kućnim vratima, vratima prostorija i raznim područjima na kojima se treba provesti kontrola pristupa. Sustav zamjenjuje potrebu za nošenjem dodatnih ključeva što zamjenjuje beskontaktnim karticama i dozvoljava provedbu evidencije pristupa.  \par
 Sustav za kontrolu ulaza treba se sastojati od nekoliko dijelova:
 
 \begin{itemize}
-\item Softverskog dijela za autentifikaciju
-\item Hardverskog dijela za očitavanje NFC kartica
+\item Programskog dijela za autentifikaciju
+\item Sklopovskog dijela za očitavanje NFC kartica
 \item NFC kartice 
 \item Mehaničke brave za otvaranje ulaza
 \end{itemize}
-Potrebno je pronaći adekvatni uređaj na kojem bi se izvršavala autentifikacija te uređaj za čitanje kartica. Oba uređaja trebaju biti kompaktni, laki za montiranje i neinvazivni.
+Potrebno je pronaći adekvatni uređaj na kojem bi se izvršavala autentifikacija te uređaj za čitanje kartica. Oba uređaja trebaju biti kompaktni, laki za montiranje i lako pristupni.
 \newline
 Proces kojim bi sustav trebao raditi je:
 
@@ -221,7 +223,7 @@ U ovome dijelu rada objašnjena je cijela struktura sustava za kontrolu ulaza ko
 \item Orbit IP čitača
 \end{itemize}
 
-Sustav je zamišljen kao jednostavan sustav za kontrolu ulaza koji omogućuje autentifikaciju preko beskontaktnih kartica koje sadrže NFC tehnologiju. Naravno postoji mogućnost autentifikacije i mobilnim telefonima koji podržavaju NFC. \par 
+Sustav je zamišljen kao jednostavan sustav za kontrolu ulaza koji omogućuje autentifikaciju preko beskontaktnih kartica koje sadrže tehnologiju NFC. Naravno postoji mogućnost autentifikacije i mobilnim telefonima koji podržavaju NFC. \par 
 
 \subsection{Struktura programske podrške}
 Programska podrška se sastoji od skripte za pokretanje aplikacije za kontrolu ulaza, aplikacije za kontrolu ulaza, aplikacije za unošenje identifikatora u bazu podataka i baze podataka.
@@ -375,7 +377,7 @@ Nakon slanja odgovora aplikacija se vraća u stanje čekanja zahtjeva.
 \begin{figure}[h]
 \includegraphics[scale=0.3]{poe.jpg}
 \centering
-\caption{Mirkotik Gigabit PoE ubrizgivač \citep{14}}
+\caption{Mikrotik Gigabit PoE ubrizgivač \citep{14}}
 \centering
 \end{figure}
 
@@ -390,18 +392,47 @@ Skripta također služi za instalaciju baze podataka \textbf{TinyDB} i pokreće 
 \end{figure}
 
 Zadnja dio sustava je elektronička brava koja otvara bravu kada dobije napon od 12V. Napon dobiva iz čitača koji putem releja kod odgovora od poslužiteljske aplikacije daje napon kroz žice. 
-
+	
 \begin{figure}[h]
 \includegraphics[scale=1]{brava.jpg}
 \centering
-\caption{Elektronička brava \citep{15}}
+\caption{Primjer elektroničke brave \citep{15}}
+\centering
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{arhitektura.png}
+\centering
+\caption{Shema sustava}
+\centering
+\end{figure}
+
+\section{Integracija NFC čitača u postojeće rješenje kontrole ulaza}
+Integracija NFC čitača u sklopu većeg sustava za kontrolu ulaza koji osim NFC beskontaktnih kartica koristi i tehnologiju UHF RFID (eng. \textit{Ultra high frequency RFID}) sastoji se od 4 komponente:
+\begin{itemize}
+\item UHF čitač
+\item NFC čitač
+\item Raspberry Pi
+\item Web poslužitelj
+\end{itemize}
+
+Raspberry Pi pokreće aplikaciju \textbf{reader\_handler.py} koja za razliku od samostalnog sustava za kontrolu ulaza ne provodi autentifikaciju korisnika u bazi podataka već učitani UID prosljeđuje drugoj aplikaciji na adresu 'http://localhost:8080/reader' koja se također izvršava na Raspberry Pi-u. Prosljeđivanje UID-a provodi funkcija \textbf{send\_response} koja pomoću HTTP protokola i POST metode šalje JSON format koji navodi da se radi o NFC čitaču i o koji UID-u je očitao. 
+\par
+Aplikacija koja prima zahtjeve od strane aplikacija koje su zadužene za čitanje NFC ili UHF  oznaka provjerava s web poslužiteljem ima li očitani identifikacijski broj dozvolu pristupa  te dobiva odgovor od njega otvara li vrata ili ne.
+\par 
+Ovaj sustav pokazuje na to da je NFC čitač moguće vrlo jednostavno integrirati u veći sustav koji ne ovisi samo o NFC beskontaktnim karticama već i drugim vrstama autentifikacije.
+
+\begin{figure}[h]
+\includegraphics[scale=0.5]{vanjski.png}
+\centering
+\caption{Dijagram sustava}
 \centering
 \end{figure}
 
 \begin{figure}[h]
-\includegraphics[scale=0.5]{arhitektura.png}
+\includegraphics[scale=0.5]{nfchandler.png}
 \centering
-\caption{Shema sustava}
+\caption{reader\_handler.py}
 \centering
 \end{figure}
 
@@ -418,7 +449,7 @@ Konačan zaključak ovog rada je da je ovakva vrsta kontrole ulaza optimalno rje
 \bibliographystyle{fer}
 
 \begin{sazetak}
-U ovom radu bavi se problematikom implementacije sustava za kontrolu ulaza korištenjem beskontaktnih kartica. Objašnjeni su korišteni alati za razvoj te svi uređaji koji se koriste u implementaciji sustava. Objašnjena je NFC tehnologija, njena povijest, njen standard donesen od strane NFC Foruma, sigurnosni problemi koje rješava i način identifikacije. Prikazana je arhitektura cijelog sustava od baze podataka, poslužiteljske aplikacije, način funkcioniranja čitača i funkcioniranje cijelog sustava zajedno.
+U ovom radu bavi se problematikom implementacije sustava za kontrolu ulaza korištenjem beskontaktnih kartica. Objašnjeni su korišteni alati za razvoj te svi uređaji koji se koriste u implementaciji sustava. Objašnjena je tehnologija NFC, njena povijest, njen standard donesen od strane NFC Foruma, sigurnosni problemi koje rješava i način identifikacije. Prikazana je arhitektura cijelog sustava od baze podataka, poslužiteljske aplikacije, način funkcioniranja čitača i funkcioniranje cijelog sustava zajedno.
 
 \kljucnerijeci{Kontrola ulaza, Beskontaktne kartice, Autentifikacija, NFC, Python, Čitač kartica}
 \end{sazetak}
